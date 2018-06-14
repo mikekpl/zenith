@@ -1,6 +1,7 @@
 # Zenith
 
-## All in one utility tool for Android (more to come soon!)
+#### All in one utility tool for Android (more to come soon!)
+If you find anything we can add / improve, feel free to do a pull request :)
 
 Gradle
 
@@ -14,9 +15,9 @@ repositories {
 implementation 'com.github.ekimual:zenith:1.0.1'
 ```
 
-## Class Usage
+### Class Usage
 
-### zenith > utils
+## zenith > utils
 #### DebugLog
 Used for logging, reporting error messages and making sure production version doesn't show any logs.
 
@@ -54,7 +55,7 @@ networkUnavailable() // Do something when you get disconnected
 ```
 ==============================================================
 
-### zenith > adapters
+## zenith > adapters
 #### GenericListAdapter
 Instead of extending to RecyclerView.Adapter, use GenericListAdapter! Easily define your models through your adapters.
 
@@ -62,11 +63,11 @@ Instead of extending to RecyclerView.Adapter, use GenericListAdapter! Easily def
 Class : GenericListAdapter<*> // * can be User, Employee, People etc model classes
 ```
 
-### zenith > dialogs
+## zenith > dialogs
 #### FixedHoloDatePickerDialog
 Forces the date pickers to be Holo Themed
 
-### zenith > widgets
+## zenith > widgets
 #### NoScrollTextView
 Simply a TextView that cannot be scrolled
 
