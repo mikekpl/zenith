@@ -61,7 +61,7 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
         notifyDataSetChanged()
     }
 
-    fun removeItem(index: Int) {
+    open fun removeItem(index: Int) {
         this.items.removeAt(index)
         notifyDataSetChanged()
     }
