@@ -1,11 +1,11 @@
 <resources>
 
-    <style name="AlertDialogTheme" parent="Theme.AppCompat.Dialog.Alert">
+    <style name="AlertDialogTheme" parent="Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">@color/color_primary_variant</item>
         <item name="android:textColorPrimary">@color/color_gray_variant</item>
     </style>
 
-    <style name="AppCompatAlertDialogStyle" parent="Base.Theme.AppCompat.Dialog.Alert">
+    <style name="AppCompatAlertDialogStyle" parent="Base.Theme.AppCompat.Light.Dialog.Alert">
         <item name="colorAccent">@color/color_primary_variant</item>
         <item name="android:textColorPrimary">@color/color_gray_variant</item>
         <item name="android:background">@android:color/white</item>
