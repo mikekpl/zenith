@@ -85,7 +85,7 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
 
     protected abstract fun setOnCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
 
-    private fun setGetItemViewType(item: T?, position: Int): Int {
+    protected fun setGetItemViewType(item: T?, position: Int): Int {
         return -1
     }
 

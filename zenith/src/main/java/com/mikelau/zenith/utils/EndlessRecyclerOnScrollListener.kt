@@ -37,5 +37,5 @@ abstract class EndlessRecyclerOnScrollListener(private val mLinearLayoutManager:
         }
     }
 
-    abstract fun onLoadMore(current_page: Int)
+    abstract fun onLoadMore(currentPage: Int)
 }
