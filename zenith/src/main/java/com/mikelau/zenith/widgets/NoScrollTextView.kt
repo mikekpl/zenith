@@ -6,6 +6,7 @@ import android.widget.TextView
 import android.content.Context
 import android.util.AttributeSet
 
+/** The TextView that doesn't scroll, but expands. **/
 class NoScrollTextView : TextView {
     constructor(context: Context) : super(context) {}
 

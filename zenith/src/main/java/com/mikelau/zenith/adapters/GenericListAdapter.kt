@@ -5,16 +5,10 @@ import android.view.ViewGroup
 
 import java.util.ArrayList
 
-/**
- * Generic Adapter class for views with custom adapters / models
- *
- * So instead of extend RecyclerView.Adapter, you can now adjust to
- * extending GenericListAdapter<Model> and your model will be easily accessible
- **/
+/** Abstract class to be extended by adapters to Adapt a certain Model (POJO / POKO) **/
 abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var mAddCount = 0
-
     var items = ArrayList<T>()
 
     fun addItems(items: ArrayList<T>) {
@@ -27,13 +21,19 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
         notifyDataSetChanged()
     }
 
+    fun insertItems(items: ArrayList<T>) {
+        val pastIndex = this.items.size
+        this.items.addAll(items)
+        notifyItemInserted(pastIndex - 1)
+    }
+
     fun addItem(item: T) {
         this.items.add(item)
         notifyDataSetChanged()
     }
 
     fun addItem(i: Int, item: T?) {
-        this.items.add(i, item!!)
+        item?.let { this.items.add(i, it) }
         notifyDataSetChanged()
     }
 
@@ -85,7 +85,7 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
 
     protected abstract fun setOnCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder
 
-    protected fun setGetItemViewType(item: T?, position: Int): Int {
+    private fun setGetItemViewType(item: T?, position: Int): Int {
         return -1
     }
 
@@ -128,4 +128,5 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
     protected fun addTotalCount(addCount: Int) {
         this.mAddCount = addCount
     }
+
 }

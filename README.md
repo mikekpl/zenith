@@ -1,6 +1,6 @@
 # Zenith
 
-#### All in one utility tool for Android (more to come soon!)
+#### All in one utility tool for Android (more to come soon / to be updated readme)
 If you find anything we can add / improve, feel free to do a pull request :)
 
 Gradle
@@ -12,7 +12,7 @@ repositories {
 ```
 
 ```
-implementation 'com.github.ekimual:zenith:1.0.1'
+implementation 'com.github.ekimual:zenith:1.0.2'
 ```
 
 ### Class Usage

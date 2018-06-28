@@ -9,6 +9,15 @@ import android.util.Log
 object DebugLog {
 
     var isProduction: Boolean = true
+
+    /**
+     * Logger to just print
+     * @param msg Current message to log
+     */
+    fun justPrint(msg: String) {
+        if (!isProduction) Log.e(":: DebugLog.class ::", "\n")
+    }
+
     /**
      * Logger to print any message in error for testing
      * @param con Current context
@@ -24,7 +33,6 @@ object DebugLog {
             } catch (e: Exception) {
                 Log.e(":: DebugLog.class ::", "\n", e)
             }
-
         }
     }
 

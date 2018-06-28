@@ -8,9 +8,7 @@ import android.widget.DatePicker
 import com.mikelau.zenith.utils.DebugLog
 import java.lang.reflect.Field
 
-/**
- * Enforce Holo Date Picker Dialog
- */
+/** Enforce Holo Date Picker Dialog **/
 class FixedHoloDatePickerDialog(context: Context, callBack: DatePickerDialog.OnDateSetListener, year: Int, monthOfYear: Int, dayOfMonth: Int) : DatePickerDialog(context, callBack, year, monthOfYear, dayOfMonth) {
 
     init {

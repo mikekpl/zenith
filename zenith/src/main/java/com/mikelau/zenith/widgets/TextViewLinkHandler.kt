@@ -16,25 +16,13 @@ class TextViewLinkHandler(private val mListener: OnTextViewClickMovementListener
     private var mBuffer: Spannable? = null
 
     enum class LinkType {
-
-        /**
-         * Indicates that phone link was clicked
-         */
+        /** Indicates that phone link was clicked **/
         PHONE,
-
-        /**
-         * Identifies that URL was clicked
-         */
+        /** Identifies that URL was clicked **/
         WEB_URL,
-
-        /**
-         * Identifies that Email Address was clicked
-         */
+        /** Identifies that Email Address was clicked **/
         EMAIL_ADDRESS,
-
-        /**
-         * Indicates that none of above mentioned were clicked
-         */
+        /** Indicates that none of above mentioned were clicked **/
         NONE
     }
 

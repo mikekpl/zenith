@@ -1,5 +1,9 @@
 apply plugin: 'com.android.library'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+androidExtensions {
+    experimental = true
+}
 apply plugin: 'com.github.dcendents.android-maven'
 
 group='com.github.ekimual'
@@ -28,9 +32,10 @@ repositories {
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:${appCompat}"
-    implementation "com.android.support:design:${appCompat}"
-    implementation "com.android.support:support-v4:${appCompat}"
+    implementation "com.android.support:appcompat-v7:$appCompat"
+    implementation "com.android.support:design:$appCompat"
+    implementation "com.android.support:support-v4:$appCompat"
+    implementation "com.android.support:support-dynamic-animation:$appCompat"
     implementation "com.google.code.gson:gson:2.8.4"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 }
