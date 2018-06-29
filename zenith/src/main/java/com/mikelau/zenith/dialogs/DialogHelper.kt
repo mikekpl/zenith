@@ -4,6 +4,7 @@ import android.app.AlertDialog
 import android.content.Context
 import android.support.v4.content.ContextCompat
 import android.view.View
+import android.view.Window
 import com.mikelau.zenith.R
 import com.mikelau.zenith.interfaces.AlertInterface
 import com.mikelau.zenith.utils.AnimatorHelper
@@ -22,6 +23,7 @@ class DialogHelper(private val mContext: Context) {
                 .setMessage(message)
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }.create()
 
+        mAlert?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
@@ -44,6 +46,7 @@ class DialogHelper(private val mContext: Context) {
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }
                 .setNegativeButton(negative) { dialogInterface, i -> target.negativeMethod(dialogInterface, i) }.create()
 
+        mAlert?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
@@ -66,6 +69,7 @@ class DialogHelper(private val mContext: Context) {
                 .setMessage(message)
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }.setNeutralButton(neutral) { dialogInterface, i -> target.neutralMethod(dialogInterface, i) }.setNegativeButton(negative) { dialogInterface, i -> target.negativeMethod(dialogInterface, i) }.create()
 
+        mAlert?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
@@ -86,6 +90,7 @@ class DialogHelper(private val mContext: Context) {
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }
                 .setNegativeButton(negative) { dialogInterface, i -> target.negativeMethod(dialogInterface, i) }.create()
 
+        mAlert?.window?.requestFeature(Window.FEATURE_NO_TITLE)
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)

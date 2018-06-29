@@ -11,53 +11,53 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
     var mAddCount = 0
     var items = ArrayList<T>()
 
-    fun addItems(items: ArrayList<T>) {
+    open fun addItems(items: ArrayList<T>) {
         this.items.addAll(items)
         notifyDataSetChanged()
     }
 
-    fun addItems(items: Set<T>) {
+    open fun addItems(items: Set<T>) {
         this.items.addAll(items)
         notifyDataSetChanged()
     }
 
-    fun insertItems(items: ArrayList<T>) {
+    open fun insertItems(items: ArrayList<T>) {
         val pastIndex = this.items.size
         this.items.addAll(items)
         notifyItemInserted(pastIndex - 1)
     }
 
-    fun addItem(item: T) {
+    open fun addItem(item: T) {
         this.items.add(item)
         notifyDataSetChanged()
     }
 
-    fun addItem(i: Int, item: T?) {
+    open fun addItem(i: Int, item: T?) {
         item?.let { this.items.add(i, it) }
         notifyDataSetChanged()
     }
 
-    fun addItemsOnTop(items: ArrayList<T>) {
+    open fun addItemsOnTop(items: ArrayList<T>) {
         this.items.addAll(0, items)
         notifyDataSetChanged()
     }
 
-    fun addItemOnTop(item: T) {
+    open fun addItemOnTop(item: T) {
         this.items.add(0, item)
         notifyDataSetChanged()
     }
 
-    fun modifyItem(t: T, position: Int) {
+    open fun modifyItem(t: T, position: Int) {
         this.items[position] = t
         notifyDataSetChanged()
     }
 
-    fun refresh(items: ArrayList<T>) {
+    open fun refresh(items: ArrayList<T>) {
         this.items = items
         notifyDataSetChanged()
     }
 
-    fun refresh() {
+    open fun refresh() {
         notifyDataSetChanged()
     }
 
@@ -66,12 +66,12 @@ abstract class GenericListAdapter<T> : RecyclerView.Adapter<RecyclerView.ViewHol
         notifyDataSetChanged()
     }
 
-    fun clear() {
+    open fun clear() {
         this.items.clear()
         notifyDataSetChanged()
     }
 
-    fun addSection(position: Int) {
+    open fun addSection(position: Int) {
         addItem(position, null)
     }
 
