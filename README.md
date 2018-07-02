@@ -12,7 +12,7 @@ repositories {
 ```
 
 ```
-implementation 'com.github.ekimual:zenith:1.0.2'
+implementation 'com.github.ekimual:zenith:1.1.0'
 ```
 
 ### Class Usage
@@ -30,6 +30,7 @@ In any class
 DebugLog.showException(context, class, throwable) // Shows Throwable / Exception with context and class details
 DebugLog.showError(context, string) // Shows Log in error form (RED) so we can determine it easily
 DebugLog.printStackTrace(exception) // Shows error message of exception
+DebugLog.justPrint("message") // Shows a log in error format
 ```
 
 #### CheckNetwork
