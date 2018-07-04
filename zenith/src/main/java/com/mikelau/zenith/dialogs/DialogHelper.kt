@@ -48,7 +48,6 @@ class DialogHelper(private val mContext: Context) {
 
         mAlert?.setCancelable(enableOutsideTap)
         mAlert?.setCanceledOnTouchOutside(false)
-        mAlert?.show()
         if (enableOutsideTap) {
             mAlert?.setOnCancelListener { target.negativeMethod(mAlert!!, 0) }
         }
