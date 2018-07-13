@@ -10,6 +10,7 @@ object ProgressDialogHelper {
 
     private var progressDialog: android.app.ProgressDialog? = null
 
+    @JvmStatic
     fun showProgress(context: Context, text: String, cancelable: Boolean?, touchOutside: Boolean?) {
         progressDialog = if (Build.VERSION.SDK_INT >= 23) {
             android.app.ProgressDialog(context, R.style.AppCompatAlertDialogStyle)
@@ -23,6 +24,7 @@ object ProgressDialogHelper {
         progressDialog?.show()
     }
 
+    @JvmStatic
     fun showProgress(context: Context, @StringRes text: Int, cancelable: Boolean?, touchOutside: Boolean?) {
         progressDialog = if (Build.VERSION.SDK_INT >= 23) {
             android.app.ProgressDialog(context, R.style.AppCompatAlertDialogStyle)
@@ -36,6 +38,7 @@ object ProgressDialogHelper {
         progressDialog?.show()
     }
 
+    @JvmStatic
     fun hideProgress() {
         if (progressDialog != null && progressDialog?.isShowing!!)
             progressDialog?.dismiss()

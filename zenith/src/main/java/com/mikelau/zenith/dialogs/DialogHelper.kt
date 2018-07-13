@@ -8,7 +8,7 @@ import com.mikelau.zenith.R
 import com.mikelau.zenith.interfaces.AlertInterface
 import com.mikelau.zenith.utils.AnimatorHelper
 
-class DialogHelper(private val mContext: Context) {
+class DialogHelper(private val mContext: Context?) {
 
     private var mAlert: AlertDialog? = null
 
@@ -17,15 +17,18 @@ class DialogHelper(private val mContext: Context) {
     fun getConfirmDialog(title: String, message: String, positive: String,
                          target: AlertInterface.SingleButton, enableOutsideTap: Boolean = true): AlertDialog? {
 
-        mAlert = AlertDialog.Builder(mContext, R.style.AlertDialogTheme)
+        mAlert = mContext?.let {
+            AlertDialog.Builder(it, R.style.AlertDialogTheme)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }.create()
+        }
 
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
         mAlert?.setCanceledOnTouchOutside(false)
+
         if (enableOutsideTap) {
             mAlert?.setOnCancelListener { target.positiveMethod(mAlert!!, 0) }
         }
@@ -38,16 +41,19 @@ class DialogHelper(private val mContext: Context) {
     fun getConfirmDialog(title: String, message: String, positive: String, negative: String,
                          target: AlertInterface.WithNoNeutral, enableOutsideTap: Boolean = true): AlertDialog? {
 
-        mAlert = AlertDialog.Builder(mContext, R.style.AlertDialogTheme)
+        mAlert = mContext?.let {
+            AlertDialog.Builder(it, R.style.AlertDialogTheme)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }
                 .setNegativeButton(negative) { dialogInterface, i -> target.negativeMethod(dialogInterface, i) }.create()
+        }
 
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
         mAlert?.setCanceledOnTouchOutside(false)
+
         if (enableOutsideTap) {
             mAlert?.setOnCancelListener { target.negativeMethod(mAlert!!, 0) }
         }
@@ -60,16 +66,18 @@ class DialogHelper(private val mContext: Context) {
     fun getConfirmDialog(title: String, message: String, positive: String, neutral: String, negative: String,
                          target: AlertInterface.WithNeutral, enableOutsideTap: Boolean = true): AlertDialog? {
 
-        mAlert = AlertDialog.Builder(mContext, R.style.AlertDialogTheme)
+        mAlert = mContext?.let {
+            AlertDialog.Builder(it, R.style.AlertDialogTheme)
                 .setTitle(title)
                 .setMessage(message)
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }.setNeutralButton(neutral) { dialogInterface, i -> target.neutralMethod(dialogInterface, i) }.setNegativeButton(negative) { dialogInterface, i -> target.negativeMethod(dialogInterface, i) }.create()
+        }
 
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
         mAlert?.setCanceledOnTouchOutside(false)
-        mAlert?.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(ContextCompat.getColor(mContext, R.color.color_gray_variant))
+        mContext?.let { ContextCompat.getColor(it, R.color.color_gray_variant) }?.let { mAlert?.getButton(AlertDialog.BUTTON_NEGATIVE)?.setTextColor(it) }
 
         if (enableOutsideTap) {
             mAlert?.setOnCancelListener { target.negativeMethod(mAlert!!, 0) }
@@ -81,15 +89,18 @@ class DialogHelper(private val mContext: Context) {
     private fun getCustomDialog(view: View, positive: String, negative: String,
                                 target: AlertInterface.WithNoNeutral, enableOutsideTap: Boolean): AlertDialog? {
 
-        mAlert = AlertDialog.Builder(mContext, R.style.AlertDialogTheme)
+        mAlert = mContext?.let {
+            AlertDialog.Builder(it, R.style.AlertDialogTheme)
                 .setView(view)
                 .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }
                 .setNegativeButton(negative) { dialogInterface, i -> target.negativeMethod(dialogInterface, i) }.create()
+        }
 
         AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
 
         mAlert?.setCancelable(enableOutsideTap)
         mAlert?.setCanceledOnTouchOutside(false)
+
         if (enableOutsideTap) {
             mAlert?.setOnCancelListener { target.negativeMethod(mAlert!!, 0) }
         }

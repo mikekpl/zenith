@@ -1,9 +1,11 @@
 package com.mikelau.zenith.models.warp
 
+import com.google.gson.annotations.SerializedName
+
 class Status<T> {
 
-    var status: Int = 0
-    var message: String? = null
-    var result: T? = null
+    @SerializedName("status") var status: Int = 0
+    @SerializedName("message") var message: String? = null
+    @SerializedName("result") var result: T? = null
 
 }

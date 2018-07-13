@@ -18,6 +18,7 @@ object MathUtils {
      * @param iteration in fact this is the class from the array c
      * @return a String representing the number n formatted in a shortened way.
      */
+    @JvmStatic
     fun shortCount(n: Double, iteration: Int): String {
         if (n < 1000.0) {
             return n.toLong().toString()
@@ -42,6 +43,7 @@ object MathUtils {
      * @param version1 Indicate 1st version to be compared
      * @param version2 Indicate 2nd version to be compared
      * **/
+    @JvmStatic
     fun compareVersion(version1: String, version2: String): Int {
 
         val first = version1.split("\\.".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()
@@ -83,6 +85,7 @@ object MathUtils {
      *
      * @param url The url you have to get the id to
      * **/
+    @JvmStatic
     fun getIdFromUrl(url: String): Int {
         return try {
             val pattern = Pattern.compile("-?\\d+")

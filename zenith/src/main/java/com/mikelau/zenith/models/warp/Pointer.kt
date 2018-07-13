@@ -1,16 +1,17 @@
 package com.mikelau.zenith.models.warp
 
 import android.os.Parcelable
+import com.google.gson.annotations.SerializedName
 import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 class Pointer<T>() : Parcelable {
 
-    var id: Int = 0
-    var type: String? = null
+    @SerializedName("id") var id: Int = 0
+    @SerializedName("type") var type: String? = null
         private set
-    var className: String? = null
-    var attributes: T? = null
+    @SerializedName("className") var className: String? = null
+    @SerializedName("attributes") var attributes: T? = null
 
     constructor(className: String, id: Int) : this() {
         this.id = id

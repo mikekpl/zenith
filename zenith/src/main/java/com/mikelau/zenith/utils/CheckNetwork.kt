@@ -9,6 +9,7 @@ object CheckNetwork {
     private var mNetwork: NetworkInfo? = null
 
     // Check if network is available and accessible
+    @JvmStatic
     fun isInternetAvailable(context: Context?): Boolean {
         try {
             mNetwork = (context

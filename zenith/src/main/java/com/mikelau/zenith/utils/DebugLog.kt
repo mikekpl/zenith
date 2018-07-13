@@ -8,12 +8,14 @@ import android.util.Log
  */
 object DebugLog {
 
+    @JvmField
     var isProduction: Boolean = true
 
     /**
      * Logger to just print
      * @param msg Current message to log
      */
+    @JvmStatic
     fun justPrint(msg: String) {
         if (!isProduction) Log.e(":: DebugLog.class ::", "\n")
     }
@@ -23,6 +25,7 @@ object DebugLog {
      * @param con Current context
      * @param msg Current message to log
      */
+    @JvmStatic
     fun showError(con: Context?, msg: String) {
         if (!isProduction) {
             try {
@@ -42,6 +45,7 @@ object DebugLog {
      * @param s Current class where this method is called
      * @param ex Exception value retrieved from catch
      */
+    @JvmStatic
     fun showException(con: Context?, s: Class<*>?, ex: Throwable) {
         if (!isProduction) {
             try {
@@ -60,6 +64,7 @@ object DebugLog {
      * Use this instead of e.printStackTrace so we can seal our logs
      * @param e Exception in try / catch block
      */
+    @JvmStatic
     fun printStackTrace(e: Exception) {
         if (!isProduction) {
             Log.e(":: Exception ::", e.message, e)
