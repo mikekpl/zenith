@@ -12,7 +12,7 @@ repositories {
 ```
 
 ```
-implementation 'com.github.ekimual:zenith:1.1.0'
+implementation 'com.github.ekimual:zenith:1.1.2'
 ```
 
 ### Class Usage
@@ -79,3 +79,6 @@ Usage layout in XML
 
 #### TextViewLinkHandler
 Automatically handle links that are present in TextView e.g. websites, emails.
+
+## More
+There are many more helpful classes, functions that you can use here, (To be updated)
