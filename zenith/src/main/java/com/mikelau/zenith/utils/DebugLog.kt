@@ -17,7 +17,7 @@ object DebugLog {
      */
     @JvmStatic
     fun justPrint(msg: String) {
-        if (!isProduction) Log.e(":: DebugLog.class ::", "\n")
+        if (!isProduction) Log.e(":: DebugLog.class ::", msg)
     }
 
     /**
