@@ -12,7 +12,7 @@ repositories {
 ```
 
 ```
-implementation 'com.github.ekimual:zenith:1.1.4'
+implementation 'com.github.mike14u:zenith:1.1.6'
 ```
 
 ### Class Usage

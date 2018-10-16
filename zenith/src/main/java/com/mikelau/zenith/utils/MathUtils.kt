@@ -94,7 +94,7 @@ object MathUtils {
             while (matcher.find()) {
                 numbers.add(matcher.group())
             }
-            Integer.valueOf(numbers[0])
+            Integer.valueOf(numbers[numbers.size - 1])
         } catch (e: Exception) {
             0
         }
