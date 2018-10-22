@@ -3,6 +3,8 @@
 
 [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Zenith-brightgreen.svg?style=popout-square)](https://android-arsenal.com/details/1/7019)
 [![Android Arsenal](https://img.shields.io/badge/Twitter-mike14u-blue.svg?style=popout-square)](https://www.twitter.com/mike14u)
+[![Android Arsenal](https://img.shields.io/badge/Github-mike14u-ff69b4.svg?style=popout-square)](https://github.com/mike14u)
+
 
 Zenith is a library for Android written in Kotlin for ready made helpers and make development easier. It covers wide ranges of support
 from widgets to raw utility classes. If there are things we can improve or add to the library, feel free, just let me know.
@@ -27,13 +29,13 @@ implementation 'com.github.mike14u:zenith:1.1.6'
 
 This library mostly contains utility examples, below are 2 Class examples:
 
-CheckNetwork
+**CheckNetwork**
 
 ```
 CheckNetwork.isInternetAvailable(...) // Returns true or false whether it is or it isn't
 ```
 
-DebugLog
+**DebugLog**
 
 ```
 DebugLog.showException(context, class, throwable) // Shows Throwable / Exception with context and class details
@@ -47,8 +49,6 @@ _For more examples and usage, please refer to the [Wiki](https://github.com/mike
 ## Meta
 
 Distributed under the Apache License. See ``LICENSE`` for more information.
-
-[https://github.com/mike14u/](https://github.com/mike14u/)
 
 ## Contributing
 
