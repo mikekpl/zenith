@@ -1,7 +1,15 @@
 # Zenith
+> All in one utility tool for Android. If you find anything we can add / improve, feel free to do a pull request :)
 
-#### All in one utility tool for Android (more to come soon / to be updated readme)
-If you find anything we can add / improve, feel free to do a pull request :)
+[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-Zenith-brightgreen.svg?style=popout-square)](https://android-arsenal.com/details/1/7019)
+[![Android Arsenal](https://img.shields.io/badge/Twitter-mike14u-blue.svg?style=popout-square)](https://www.twitter.com/mike14u)
+
+Zenith is a library for Android written in Kotlin for ready made helpers and make development easier. It covers wide ranges of support
+from widgets to raw utility classes. If there are things we can improve or add to the library, feel free, just let me know.
+
+## Getting Started
+
+Make sure to have Android Studio
 
 Gradle
 
@@ -15,17 +23,18 @@ repositories {
 implementation 'com.github.mike14u:zenith:1.1.6'
 ```
 
-### Class Usage
+## Usage example
 
-## zenith > utils
-#### DebugLog
-Used for logging, reporting error messages and making sure production version doesn't show any logs.
+This library mostly contains utility examples, below are 2 Class examples:
 
-In Application Class
+CheckNetwork
+
 ```
-DebugLog.isProduction = false // If set to true it won't show logs since its for production.
+CheckNetwork.isInternetAvailable(...) // Returns true or false whether it is or it isn't
 ```
-In any class
+
+DebugLog
+
 ```
 DebugLog.showException(context, class, throwable) // Shows Throwable / Exception with context and class details
 DebugLog.showError(context, string) // Shows Log in error form (RED) so we can determine it easily
@@ -33,52 +42,18 @@ DebugLog.printStackTrace(exception) // Shows error message of exception
 DebugLog.justPrint("message") // Shows a log in error format
 ```
 
-#### CheckNetwork
-Used for checking internet availability.
+_For more examples and usage, please refer to the [Wiki](https://github.com/mike14u/zenith/wiki)._
 
-```
-CheckNetwork.isInternetAvailable(...) // Returns true or false whether it is or it isn't
-```
+## Meta
 
-#### EndlessRecyclerOnScrollListener
-Used for endless scrolling for ListViews / RecyclerViews (Pagination)
+Distributed under the Apache License. See ``LICENSE`` for more information.
 
-```
-recyclerView.addOnScrollListener(new EndlessRecyclerOnScrollListener ...) // Callback onLoadMore, do what you want upon paginating.
-```
+[https://github.com/mike14u/](https://github.com/mike14u/)
 
-#### NetworkStateReceiver
-An interface used for checking network state (internet connected, internet disconnected)
+## Contributing
 
-```
-networkAvailable() // Do something when you get connected
-networkUnavailable() // Do something when you get disconnected
-```
-==============================================================
-
-## zenith > adapters
-#### GenericListAdapter
-Instead of extending to RecyclerView.Adapter, use GenericListAdapter! Easily define your models through your adapters.
-
-```
-Class : GenericListAdapter<*> // * can be User, Employee, People etc model classes
-```
-
-## zenith > dialogs
-#### FixedHoloDatePickerDialog
-Forces the date pickers to be Holo Themed
-
-## zenith > widgets
-#### NoScrollTextView
-Simply a TextView that cannot be scrolled
-
-Usage layout in XML
-```
-<NoScrollTextView ...>
-```
-
-#### TextViewLinkHandler
-Automatically handle links that are present in TextView e.g. websites, emails.
-
-## More
-There are many more helpful classes, functions that you can use here, (To be updated)
+1. Fork it (<https://github.com/mike14u/zenith/fork>)
+2. Create your feature branch (`git checkout -b feature/fooBar`)
+3. Commit your changes (`git commit -am 'Add some fooBar'`)
+4. Push to the branch (`git push origin feature/fooBar`)
+5. Create a new Pull Request
