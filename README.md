@@ -13,7 +13,7 @@ from widgets to raw utility classes. If there are things we can improve or add t
 
 Make sure to have Android Studio
 
-Gradle
+**Gradle**
 
 ```
 repositories {
