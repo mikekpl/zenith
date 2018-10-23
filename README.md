@@ -24,7 +24,7 @@ repositories {
 implementation 'com.github.mike14u:zenith:1.1.6'
 ```
 
-## Usage example
+## Usage
 
 This library mostly contains utility examples, below are 2 Class examples:
 
