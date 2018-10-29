@@ -20,8 +20,20 @@ repositories {
 }
 ```
 
+** Older Versions **
+
+This is now deprecated and will be the last support of Zenith for android.support era.
+
 ```
 implementation 'com.github.mike14u:zenith:1.1.6'
+```
+
+** New Versions **
+
+This supports AndroidX and will most likely be the one to be updated moving forward.
+
+```
+implementation 'com.github.mike14u:zenith:2.0.0'
 ```
 
 ## Usage

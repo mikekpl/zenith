@@ -2,7 +2,7 @@ package com.mikelau.zenith.dialogs
 
 import android.content.Context
 import android.os.Build
-import android.support.annotation.StringRes
+import androidx.annotation.StringRes
 import com.mikelau.zenith.R
 
 /** Ready to use progress dialog with custom implementation. Uniformed way of making a progress dialog **/

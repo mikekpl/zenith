@@ -1,7 +1,7 @@
 package com.mikelau.zenith.utils
 
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 /**
  * Endless Recycler On Scroll Listener for Scroll Pagination

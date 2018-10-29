@@ -32,10 +32,10 @@ repositories {
 }
 
 dependencies {
-    implementation "com.android.support:appcompat-v7:$appCompat"
-    implementation "com.android.support:design:$appCompat"
-    implementation "com.android.support:support-v4:$appCompat"
-    implementation "com.android.support:support-dynamic-animation:$appCompat"
+    implementation 'androidx.appcompat:appcompat:1.0.0'
+    implementation 'com.google.android.material:material:1.0.0'
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.dynamicanimation:dynamicanimation:1.0.0'
     implementation "com.google.code.gson:gson:2.8.4"
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
 }

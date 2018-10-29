@@ -2,7 +2,7 @@ package com.mikelau
 
 import android.content.DialogInterface
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import com.mikelau.zenith.dialogs.DialogHelper
 import com.mikelau.zenith.interfaces.AlertInterface
 import com.mikelau.zenith.utils.CheckNetwork
