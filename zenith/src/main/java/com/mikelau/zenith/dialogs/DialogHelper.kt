@@ -108,10 +108,45 @@ class DialogHelper(private val mContext: Context?) {
         return mAlert
     }
 
+    private fun getSingle(view: View, positive: String,
+                         target: AlertInterface.SingleButton, enableOutsideTap: Boolean): AlertDialog? {
+
+        mAlert = mContext?.let {
+            AlertDialog.Builder(it, R.style.AlertDialogTheme)
+                    .setView(view)
+                    .setPositiveButton(positive) { dialogInterface, i -> target.positiveMethod(dialogInterface, i) }.create()
+        }
+
+        AnimatorHelper.startSpringAnimation(mAlert?.window?.decorView!!, 0.70f)
+
+        mAlert?.setCancelable(enableOutsideTap)
+        mAlert?.setCanceledOnTouchOutside(false)
+
+        if (enableOutsideTap) {
+            mAlert?.setOnCancelListener { target.positiveMethod(mAlert!!, 0) }
+        }
+
+        return mAlert
+    }
+
+    /** Legacy Support **/
+    @JvmOverloads
     fun getCustomDialog(view: View, positive: String, negative: String, target: AlertInterface.WithNoNeutral): AlertDialog? {
         return getCustomDialog(view, positive, negative, target, true)
     }
+    /** Legacy Support **/
 
+    @JvmOverloads
+    fun getCustomSingle(view: View, positive: String, target: AlertInterface.SingleButton, cancellable: Boolean): AlertDialog? {
+        return getSingle(view, positive, target, cancellable)
+    }
+
+    @JvmOverloads
+    fun getCustomDouble(view: View, positive: String, negative: String, target: AlertInterface.WithNoNeutral, cancellable: Boolean): AlertDialog? {
+        return getCustomDialog(view, positive, negative, target, cancellable)
+    }
+
+    @JvmOverloads
     fun dismiss() {
         if (mAlert != null)
             mAlert?.dismiss()
