@@ -2,13 +2,18 @@ package com.mikelau
 
 import android.content.DialogInterface
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.mikelau.zenith.dialogs.DialogHelper
 import com.mikelau.zenith.interfaces.AlertInterface
 import com.mikelau.zenith.utils.CheckNetwork
 import com.mikelau.zenith.utils.DebugLog
+import com.mikelau.zenith.utils.setSafeOnClickListener
+import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
+
+    var i = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,6 +26,11 @@ class MainActivity : AppCompatActivity() {
 
         // CheckNetwork Test
         CheckNetwork.isInternetAvailable(this)
+
+        tvMain.setSafeOnClickListener {
+            // Test Safe Click Listener
+            Toast.makeText(this@MainActivity, "Hello World " + i++, Toast.LENGTH_SHORT).show()
+        }
 
     }
 
