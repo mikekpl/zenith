@@ -33,7 +33,7 @@ implementation 'com.github.mike14u:zenith:1.1.6'
 This supports AndroidX and will most likely be the one to be updated moving forward.
 
 ```
-implementation 'com.github.mike14u:zenith:2.0.3'
+implementation 'com.github.mike14u:zenith:2.0.4'
 ```
 
 ## Usage
