@@ -30,6 +30,7 @@ object SnackbarHelper {
                     activity.findViewById(android.R.id.content) as View
                 }
         val sn = TSnackbar.make(viewConfig, textConfig, TSnackbar.LENGTH_LONG)
+        sn.setMaxWidth(3000)
         val snView = sn.view
         val textView = snView.findViewById(com.androidadvance.topsnackbar.R.id.snackbar_text) as TextView
         snView.setBackgroundColor(ContextCompat.getColor(activity, color!!))
