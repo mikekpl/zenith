@@ -23,11 +23,11 @@ object SnackbarHelper {
                 try {
                     when (view) {
                         is View -> view
-                        is Int -> activity.findViewById(view)
-                        else -> activity.findViewById(android.R.id.content)
+                        is Int -> activity.findViewById(view) as View
+                        else -> activity.findViewById(android.R.id.content) as View
                     }
                 } catch (e: Exception) {
-                    activity.findViewById(android.R.id.content)
+                    activity.findViewById(android.R.id.content) as View
                 }
         val sn = TSnackbar.make(viewConfig, textConfig, TSnackbar.LENGTH_LONG)
         val snView = sn.view
