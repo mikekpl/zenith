@@ -34,6 +34,7 @@ object SnackbarHelper {
         val snView = sn.view
         val textView = snView.findViewById(com.androidadvance.topsnackbar.R.id.snackbar_text) as TextView
         snView.setBackgroundColor(ContextCompat.getColor(activity, color!!))
+        textView.maxLines = 5
         textView.setTextColor(Color.WHITE)
         sn.show()
     }
